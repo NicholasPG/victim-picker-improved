@@ -105,7 +105,7 @@ public class Picker {
         //Finds the lowest number of picks among all victims
         int minPicks = 999;
         for (Victim victim : victims) {
-            if (pickedToday.contains(victim)) {
+            if (pickedToday.contains(victim) || absentToday.contains(victim)) {
                 continue;
             }
             if (victim.getNumberOfPicks() < minPicks) {
@@ -114,7 +114,7 @@ public class Picker {
         }
         //creates list of all valid victims based on number of times picked
         for (Victim victim : victims) {
-            if (victim.getNumberOfPicks() == minPicks && !pickedToday.contains(victim)) {
+            if (victim.getNumberOfPicks() == minPicks && !pickedToday.contains(victim) && !absentToday.contains(victim)) {
                 validPicks.add(victim);
             }
         }
