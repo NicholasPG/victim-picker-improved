@@ -3,9 +3,6 @@ import java.awt.*;
 
 public class VictimPanel extends JPanel {
 
-    AddPointsButton addPoints;
-    RemovePointsButton removePoints;
-
     Picker victimPicker;
     Victim victim;
     VictimPickerPanel panel;

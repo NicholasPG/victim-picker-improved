@@ -4,8 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import static javax.swing.SwingConstants.BOTTOM;
-
 public class VictimPickerPanel extends JPanel {
 
     private ArrayList<VictimPanel> victims;
@@ -22,6 +20,12 @@ public class VictimPickerPanel extends JPanel {
         //Create the Victim to be Displayed as JLabel
         pickedVictim= new JLabel("Victim Will Appear Here");
         this.add(pickedVictim);
+
+
+
+
+
+
         pickedVictimScore= new JLabel(" ");
         this.add(pickedVictimScore);
 
