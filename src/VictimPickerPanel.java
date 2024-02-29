@@ -4,10 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import static javax.swing.SwingConstants.BOTTOM;
+
 public class VictimPickerPanel extends JPanel {
 
     private ArrayList<VictimPanel> victims;
     private JLabel pickedVictim;
+    private JLabel pickedVictimScore;
     private ImageIcon khaled;
 
     private Picker victimPicker;
@@ -19,6 +22,8 @@ public class VictimPickerPanel extends JPanel {
         //Create the Victim to be Displayed as JLabel
         pickedVictim= new JLabel("Victim Will Appear Here");
         this.add(pickedVictim);
+        pickedVictimScore= new JLabel(" ");
+        this.add(pickedVictimScore);
 
 
         JButton pickButton = new JButton("PICK A VICTIM");
@@ -31,6 +36,7 @@ public class VictimPickerPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 Victim victim = victimPicker.chooseOne();
                 pickedVictim.setText(victim.getName());
+                pickedVictimScore.setText("- Current score: " + victim.getScore());
 
                 //set buttons to correct visibility
                 absentButton.setVisible(true);
@@ -46,6 +52,7 @@ public class VictimPickerPanel extends JPanel {
                 //clear the selected victim from the screen
                 victimPicker.resetPickedVictims();
                 pickedVictim.setText("Victim Will Appear Here");
+                pickedVictimScore.setText(" ");
 
                 //set buttons to correct visibility
                 absentButton.setVisible(false);
@@ -61,6 +68,7 @@ public class VictimPickerPanel extends JPanel {
                 //clear the selected victim from the screen
                 victimPicker.resetPickedVictims();
                 pickedVictim.setText("Victim Will Appear Here");
+                pickedVictimScore.setText(" ");
 
                 //set buttons to correct visibility
                 absentButton.setVisible(false);
@@ -76,6 +84,7 @@ public class VictimPickerPanel extends JPanel {
                 //clear the selected victim from the screen
                 victimPicker.resetPickedVictims();
                 pickedVictim.setText("Victim Will Appear Here");
+                pickedVictimScore.setText(" ");
 
                 //set buttons to correct visibility
                 absentButton.setVisible(false);

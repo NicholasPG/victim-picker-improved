@@ -25,10 +25,20 @@ public class Tester {
         JFrame pickerFrame = new JFrame("Victim Picker");
         pickerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pickerFrame.setPreferredSize(new Dimension(1000, 500));
+        pickerFrame.setLayout(null);
 
         //Create and Add victim Picker Panel
         VictimPickerPanel victimPickerPanel = new VictimPickerPanel(picker);
+        victimPickerPanel.setBounds(25, 25, 500, 50);
         pickerFrame.add(victimPickerPanel);
+
+        pickerFrame.pack();
+
+        //Create and Add volunteer Panel
+        Volunteer volunteer = new Volunteer(picker);
+        volunteer.setBounds(25, 100, 500, 50);
+        pickerFrame.add(volunteer);
+
 
         //Final formatting of the frame
         pickerFrame.pack();
