@@ -35,14 +35,14 @@ public class Tester {
 
         //Create and Add victim Picker Panel
         VictimPickerPanel victimPickerPanel = new VictimPickerPanel(picker);
-        victimPickerPanel.setBounds(25, 25, 500, 50);
+        victimPickerPanel.setBounds(25, 25, 1000, 250);
         pickerFrame.add(victimPickerPanel);
 
-        pickerFrame.pack();
+        //pickerFrame.pack();
 
         //Create and Add volunteer Panel
         Volunteer volunteer = new Volunteer(picker);
-        volunteer.setBounds(25, 100, 500, 50);
+        volunteer.setBounds(25, 300, 600, 600);
         pickerFrame.add(volunteer);
 
 
