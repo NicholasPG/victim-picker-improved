@@ -8,6 +8,7 @@ public class VictimPickerPanel extends JPanel {
 
     private ArrayList<VictimPanel> victims;
     private JLabel pickedVictim;
+    private JLabel pickedVictimScore;
     private JTextField textField;
     private ImageIcon khaled;
 
@@ -26,6 +27,14 @@ public class VictimPickerPanel extends JPanel {
 
 
 
+
+
+
+
+        pickedVictimScore= new JLabel(" ");
+        this.add(pickedVictimScore);
+
+
         JButton pickButton = new JButton("PICK A VICTIM");
         JButton absentButton = new JButton("Mark Absent");
         JButton plusPointsButton = new JButton("Add Points");
@@ -36,6 +45,7 @@ public class VictimPickerPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 Victim victim = victimPicker.chooseOne();
                 pickedVictim.setText(victim.getName());
+                pickedVictimScore.setText("- Current score: " + victim.getScore());
 
                 //set buttons to correct visibility
                 absentButton.setVisible(true);
@@ -51,6 +61,7 @@ public class VictimPickerPanel extends JPanel {
                 //clear the selected victim from the screen
                 victimPicker.resetPickedVictims();
                 pickedVictim.setText("Victim Will Appear Here");
+                pickedVictimScore.setText(" ");
 
                 //set buttons to correct visibility
                 absentButton.setVisible(false);
@@ -66,6 +77,7 @@ public class VictimPickerPanel extends JPanel {
                 //clear the selected victim from the screen
                 victimPicker.resetPickedVictims();
                 pickedVictim.setText("Victim Will Appear Here");
+                pickedVictimScore.setText(" ");
 
                 //set buttons to correct visibility
                 absentButton.setVisible(false);
@@ -81,6 +93,7 @@ public class VictimPickerPanel extends JPanel {
                 //clear the selected victim from the screen
                 victimPicker.resetPickedVictims();
                 pickedVictim.setText("Victim Will Appear Here");
+                pickedVictimScore.setText(" ");
 
                 //set buttons to correct visibility
                 absentButton.setVisible(false);

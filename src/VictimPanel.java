@@ -3,7 +3,6 @@ import java.awt.*;
 
 public class VictimPanel extends JPanel {
 
-
     Picker victimPicker;
     Victim victim;
     VictimPickerPanel panel;
