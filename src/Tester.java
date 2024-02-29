@@ -30,13 +30,12 @@ public class Tester {
         VictimPickerPanel victimPickerPanel = new VictimPickerPanel(picker);
         pickerFrame.add(victimPickerPanel);
 
-
-
-
+        //Final formatting of the frame
         pickerFrame.pack();
         pickerFrame.setVisible(true);
 
 
+        //TESTS ON THE LOGIC OF THE VICTIM PICKER
         //picking two victims
         picker.chooseTwo();
         //display names of those picked
