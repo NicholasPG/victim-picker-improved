@@ -9,6 +9,7 @@ public class VictimPickerPanel extends JPanel {
     private ArrayList<VictimPanel> victims;
     private JLabel pickedVictim;
     private JLabel pickedVictimScore;
+    private JTextField textField;
     private ImageIcon khaled;
 
     private Picker victimPicker;
@@ -20,6 +21,10 @@ public class VictimPickerPanel extends JPanel {
         //Create the Victim to be Displayed as JLabel
         pickedVictim= new JLabel("Victim Will Appear Here");
         this.add(pickedVictim);
+
+        Font font1 = new Font("SansSerif", Font.PLAIN, 50);
+        pickedVictim.setFont(font1);
+
 
 
 
