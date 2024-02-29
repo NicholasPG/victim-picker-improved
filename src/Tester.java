@@ -16,6 +16,12 @@ public class Tester {
         victims.add(new Victim("Luke", 1));
         victims.add(new Victim("Jace", 1));
         victims.add(new Victim("Tucker", 1));
+        victims.add(new Victim("John", 1));
+        victims.add(new Victim("Heather", 1));
+        victims.add(new Victim("Davis", 1));
+        victims.add(new Victim("Henry", 1));
+        victims.add(new Victim("Alfred", 1));
+        victims.add(new Victim("Sam", 1));
 
         //creating picker object and loading in victims
         Picker picker = new Picker();
