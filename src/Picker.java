@@ -60,6 +60,12 @@ public class Picker {
      * clears the pickedVictims ArrayList.
      */
     public void resetPickedVictims() {
+        if (!pickedToday.isEmpty()) {
+            //increases victim's numOfPicks
+            pickedToday.getFirst().setNumberOfPicks(pickedToday.getFirst().getNumberOfPicks() + 1);
+            //sets the victim's lastPicked to the current date
+            pickedToday.getFirst().setLastPicked(new Date());
+        }
         //empties the pickedToday ArrayList
         pickedToday.clear();
     }
@@ -87,10 +93,6 @@ public class Picker {
         for (Victim victim : pickedToday) {
             //increases victim's score
             victim.setScore(victim.getScore() + points);
-            //increases victim's numOfPicks
-            victim.setNumberOfPicks(victim.getNumberOfPicks() + 1);
-            //sets the victim's lastPicked to the current date
-            victim.setLastPicked(new Date());
         }
     }
 

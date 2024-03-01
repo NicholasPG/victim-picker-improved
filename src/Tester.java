@@ -42,7 +42,7 @@ public class Tester {
 
         //Create and Add volunteer Panel
         Volunteer volunteer = new Volunteer(picker);
-        volunteer.setBounds(25, 300, 600, 600);
+        volunteer.setBounds(25, 300, 600, 300);
         pickerFrame.add(volunteer);
 
 
