@@ -57,7 +57,8 @@ public class Picker {
     }
 
     /**
-     * clears the pickedVictims ArrayList.
+     * clears the pickedVictims ArrayList and adds 1 to the numberOfPicks variable ands sets today's date as
+     * the lastPicked variable for each victim.
      */
     public void resetPickedVictims() {
         if (!pickedToday.isEmpty()) {
@@ -85,8 +86,7 @@ public class Picker {
     }
 
     /**
-     * pass in the number of points to add it to the score of each Victim in the pickedToday ArrayList, increment
-     * their numberOfPicks, and add today's Date as their lastPicked Date.
+     * pass in the number of points to add it to the score of each Victim in the pickedToday ArrayList.
      * @param points the number of points added to each victims score
      */
     public void score(int points) {

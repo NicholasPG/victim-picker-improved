@@ -23,9 +23,11 @@ public class Tester {
         victims.add(new Victim("Alfred", 1));
         victims.add(new Victim("Sam", 1));
 
+
         //creating picker object and loading in victims
         Picker picker = new Picker();
         picker.loadList(victims);
+
 
         //Creating Frame for GUI
         JFrame pickerFrame = new JFrame("Victim Picker");
@@ -33,12 +35,12 @@ public class Tester {
         pickerFrame.setPreferredSize(new Dimension(1000, 500));
         pickerFrame.setLayout(null);
 
+
         //Create and Add victim Picker Panel
         VictimPickerPanel victimPickerPanel = new VictimPickerPanel(picker);
         victimPickerPanel.setBounds(25, 25, 1000, 250);
         pickerFrame.add(victimPickerPanel);
 
-        //pickerFrame.pack();
 
         //Create and Add volunteer Panel
         Volunteer volunteer = new Volunteer(picker);
@@ -49,79 +51,6 @@ public class Tester {
         //Final formatting of the frame
         pickerFrame.pack();
         pickerFrame.setVisible(true);
-
-
-        //TESTS ON THE LOGIC OF THE VICTIM PICKER
-        //picking two victims
-        picker.chooseTwo();
-        //display names of those picked
-        for (Victim victim : picker.getPickedToday()) {
-            System.out.println(victim.getName());
-        }
-        picker.score(2);
-        picker.resetPickedVictims();
-
-        System.out.println("---------------------------------");
-
-        picker.chooseOne();
-        for (Victim victim : picker.getPickedToday()) {
-            System.out.println(victim.getName());
-        }
-        picker.chooseOne();
-        for (Victim victim : picker.getPickedToday()) {
-            System.out.println(victim.getName());
-        }
-
-        picker.score(2);
-        picker.resetPickedVictims();
-
-        System.out.println("---------------------------------");
-
-        picker.chooseTwo();
-        for (Victim victim : picker.getPickedToday()) {
-            System.out.println(victim.getName());
-        }
-
-        picker.score(2);
-        picker.resetPickedVictims();
-
-
-        System.out.println("---------------------------------");
-
-
-        //picking two victims
-        picker.chooseTwo();
-        //display names of those picked
-        for (Victim victim : picker.getPickedToday()) {
-            System.out.println(victim.getName());
-        }
-        picker.score(2);
-        picker.resetPickedVictims();
-
-        System.out.println("---------------------------------");
-
-        //picking two victims
-        picker.chooseTwo();
-        //display names of those picked
-        for (Victim victim : picker.getPickedToday()) {
-            System.out.println(victim.getName());
-        }
-        picker.score(2);
-        picker.resetPickedVictims();
-
-        System.out.println("---------------------------------");
-
-        System.out.println("Absenses");
-        for (Victim victim : picker.getAbsentToday()) {
-            System.out.println(victim.getName());
-        }
-
-        System.out.println("---------------------------------");
-
-        for (Victim victim : victims) {
-            System.out.println(victim.getName() + ": " + victim.getNumberOfPicks() + " on " + victim.getLastPicked());
-        }
-
 
     }
 }
