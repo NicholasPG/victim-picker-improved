@@ -142,4 +142,8 @@ public class Picker {
         //returns array of picked students
         return picked;
     }
+
+    public ArrayList<Victim> getVictims() {
+        return victims;
+    }
 }
