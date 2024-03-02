@@ -12,7 +12,7 @@ public class Volunteer extends JPanel
     private JButton submit;
     static JLabel sample;
     //private ArrayList<Victim> victims;
-    private Victim kys;
+    private Victim vitm;
 
     Volunteer()
     {
@@ -28,7 +28,7 @@ public class Volunteer extends JPanel
 
         volunteer = new JTextField(16);
         submit = new JButton("Submit");
-        sample = new JLabel("This does nothing right now");
+        sample = new JLabel("Enter name of volunteer");
 
         Volunteer vol = new Volunteer();
 
@@ -46,36 +46,39 @@ public class Volunteer extends JPanel
         {
             public void actionPerformed(ActionEvent e)
             {
-                Boolean barbaque = false;
+                Boolean present = false;
                 String john = volunteer.getText();
                 //String s = e.getActionCommand();
                 for (Victim n : victims)
                 {
                     if (Objects.equals(n.getName(), john))
                     {
-                        System.out.println("KILL YOURSELF");
-                        kys = n;
-                        barbaque = true;
+                        vitm = n;
+                        present = true;
                         break;
                     }
-                    System.out.println(n.getName());
                 }
 
-                if(barbaque)
+                if(present)
                 {
                     //Resets Picked Victims for logic purposes
                     victimPicker.resetPickedVictims();
-                    vpp.setVictim(kys);
-                    victimPicker.PickVolunteerVictim(kys);
+                    vpp.setVictim(vitm);
+                    victimPicker.PickVolunteerVictim(vitm);
 
                     //Picks a random victim and displays their name on screen
-                    vpp.getPickedVictim().setText(kys.getName());
-                    vpp.getPickedVictimScore().setText("Current score: " + kys.getScore());
+                    vpp.getPickedVictim().setText(vitm.getName());
+                    vpp.getPickedVictimScore().setText("Current score: " + vitm.getScore());
 
                     //set buttons to correct visibility
                     //vpp.getAbsentButton().setVisible(true);
+                    sample.setText("Enter name of volunteer");
                     vpp.getPlusPointsButton().setVisible(true);
                     vpp.getRemovePointsButton().setVisible(true);
+                }
+                else
+                {
+                    sample.setText("Invalid Person");
                 }
             }
         });
