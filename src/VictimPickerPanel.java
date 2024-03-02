@@ -14,6 +14,22 @@ public class VictimPickerPanel extends JPanel {
 
     private Picker victimPicker;
 
+    public JLabel getPickedVictim() {
+        return pickedVictim;
+    }
+
+    public JLabel getPickedVictimScore() {
+        return pickedVictimScore;
+    }
+
+    public Victim getVictim() {
+        return victim;
+    }
+
+    public Picker getVictimPicker() {
+        return victimPicker;
+    }
+
     public VictimPickerPanel(Picker victimPicker) {
 
         //set up victim picker for logic

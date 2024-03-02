@@ -26,7 +26,7 @@ public class Volunteer extends JPanel implements ActionListener {
         System.out.println(sizes);
         for (Victim n : victims)
         {
-            System.out.println(n);
+            System.out.println(n.getName());
         }
 
         volunteer = new JTextField(16);
