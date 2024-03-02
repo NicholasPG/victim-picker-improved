@@ -66,6 +66,7 @@ public class Volunteer extends JPanel
                     //Resets Picked Victims for logic purposes
                     victimPicker.resetPickedVictims();
                     vpp.setVictim(kys);
+                    victimPicker.PickVolunteerVictim(kys);
 
                     //Picks a random victim and displays their name on screen
                     vpp.getPickedVictim().setText(kys.getName());

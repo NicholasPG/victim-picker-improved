@@ -146,4 +146,8 @@ public class Picker {
     public ArrayList<Victim> getVictims() {
         return victims;
     }
+
+    public void PickVolunteerVictim(Victim volunteer) {
+        pickedToday.add(volunteer);
+    }
 }
