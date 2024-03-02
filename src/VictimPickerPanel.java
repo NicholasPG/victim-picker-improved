@@ -11,7 +11,8 @@ public class VictimPickerPanel extends JPanel {
     private JLabel pickedVictimScore;
     private TimerPanel timer;
     private final int TIMER_MINUTES = 3;
-
+    private JButton plusPointsButton;
+    private JButton removePointsButton;
     private Picker victimPicker;
 
     public JLabel getPickedVictim() {
@@ -20,6 +21,16 @@ public class VictimPickerPanel extends JPanel {
 
     public JLabel getPickedVictimScore() {
         return pickedVictimScore;
+    }
+    public JButton getPlusPointsButton(){
+        return plusPointsButton;
+    }
+    public JButton getRemovePointsButton(){
+        return removePointsButton;
+    }
+
+    public void setVictim(Victim victim) {
+        this.victim = victim;
     }
 
     public Victim getVictim() {
@@ -50,8 +61,8 @@ public class VictimPickerPanel extends JPanel {
         //Create all the buttons on the GUI
         JButton pickButton = new JButton("PICK A VICTIM");
         JButton absentButton = new JButton("Mark Absent");
-        JButton plusPointsButton = new JButton("Add Points");
-        JButton removePointsButton = new JButton("Remove Points");
+        plusPointsButton = new JButton("Add Points");
+        removePointsButton = new JButton("Remove Points");
         JButton timerButton = new JButton("Start Timer");
 
         //Sets fonts of Text

@@ -5,29 +5,26 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Volunteer extends JPanel implements ActionListener {
+public class Volunteer extends JPanel
+{
 
     private JTextField volunteer;
     private JButton submit;
     static JLabel sample;
+    //private ArrayList<Victim> victims;
+    private Victim kys;
 
     Volunteer()
     {
 
     }
 
-    public Volunteer(Picker victimPicker)
+    public Volunteer(Picker victimPicker, VictimPickerPanel vpp)
     {
         Picker swag = victimPicker;
         ArrayList<Victim> victims = swag.getVictims();
-        int size = victims.size();
-        int sizes = swag.getVictims().size();
-        System.out.println(size);
-        System.out.println(sizes);
-        for (Victim n : victims)
-        {
-            System.out.println(n.getName());
-        }
+
+
 
         volunteer = new JTextField(16);
         submit = new JButton("Submit");
@@ -35,7 +32,7 @@ public class Volunteer extends JPanel implements ActionListener {
 
         Volunteer vol = new Volunteer();
 
-        submit.addActionListener(vol);
+        //submit.addActionListener(vol);
 
         JPanel voluntold = new JPanel();
 
@@ -44,17 +41,45 @@ public class Volunteer extends JPanel implements ActionListener {
         voluntold.add(sample);
 
         this.add(voluntold);
-    }
 
-    public void actionPerformed(ActionEvent e) {
-        /*String s = e.getActionCommand();
-            if (Objects.equals(volunteer.getText(), n.toString())) {
-                // set the text of the label to the text of the field
-                this.setBackground(Color.BLUE);
+        submit.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                Boolean barbaque = false;
+                String john = volunteer.getText();
+                //String s = e.getActionCommand();
+                for (Victim n : victims)
+                {
+                    if (Objects.equals(n.getName(), john))
+                    {
+                        System.out.println("KILL YOURSELF");
+                        kys = n;
+                        barbaque = true;
+                        break;
+                    }
+                    System.out.println(n.getName());
+                }
 
-                // set the text of field to blank
-                //volunteer.setText("  ");
-            }*/
+                if(barbaque)
+                {
+                    //Resets Picked Victims for logic purposes
+                    victimPicker.resetPickedVictims();
+                    vpp.setVictim(kys);
 
+                    //Picks a random victim and displays their name on screen
+                    vpp.getPickedVictim().setText(kys.getName());
+                    vpp.getPickedVictimScore().setText("Current score: " + kys.getScore());
+
+                    //set buttons to correct visibility
+                    //vpp.getAbsentButton().setVisible(true);
+                    vpp.getPlusPointsButton().setVisible(true);
+                    vpp.getRemovePointsButton().setVisible(true);
+                }
+            }
+        });
     }
 }
+
+
+
