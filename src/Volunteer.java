@@ -18,7 +18,7 @@ public class Volunteer extends JPanel implements ActionListener {
 
     public Volunteer(Picker victimPicker)
     {
-        Picker swag = new Picker();
+        Picker swag = victimPicker;
         ArrayList<Victim> victims = swag.getVictims();
         int size = victims.size();
         int sizes = swag.getVictims().size();
